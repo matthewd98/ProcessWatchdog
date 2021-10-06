@@ -1,12 +1,11 @@
 ﻿using System;
-using System.Threading;
 using System.Threading.Tasks;
 
 namespace ProcessWatchdog
 {
     class Program
     {
-        static async Task Main(string[] args)
+        static Task Main(string[] args)
         {
             var watchdog = new ProcessWatchdog("WinRAR", @"C:\Program Files\WinRAR\WinRAR.exe", TimeSpan.FromSeconds(30));
 
@@ -14,6 +13,7 @@ namespace ProcessWatchdog
             Console.ReadKey();
 
             watchdog.TerminateProcess();
+            return Task.CompletedTask;
         }
     }
 }
