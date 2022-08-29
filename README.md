@@ -1,2 +1,0 @@
-# ProcessWatchdog
-Simple process watchdog
